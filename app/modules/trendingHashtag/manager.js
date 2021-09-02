@@ -5,6 +5,7 @@ const countryDetails = require('../../models/countryName');
 const fetch = require('node-fetch');
 import Utils from "../../utils";
 import RabbitMqController from "../queue/index";
+const TwitterTrendingModel = require("../../models/twitterTrendingModel")
 
 
 
