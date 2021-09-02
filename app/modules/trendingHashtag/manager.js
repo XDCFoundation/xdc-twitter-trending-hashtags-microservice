@@ -65,6 +65,19 @@ class BLManager {
         twitterTrendingModel.addedOn = new Date().getTime();
         twitterTrendingModel.modifiedOn = new Date().getTime();
 
+        function getQueryString(requestData) {
+            if (!requestData || requestData.length < 1)
+                return ''
+            let queryString = ''
+            requestData.map((obj) => {
+                if (queryString.length > 0)
+                    queryString = `${queryString} ${obj.query}`;
+                else
+                    queryString = `${obj.query}`;
+            })
+            return queryString
+        }
+
         try {
             twitterTrendingModel.saveData();
             Utils.lhtLog('sendTweetToBlockChain', `Completed transaction speed and saved to db`, {}, '', httpConstants.LOG_LEVEL_TYPE.INFO);
