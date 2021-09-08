@@ -7,9 +7,9 @@ module.exports = {
     AMQP_TWITTER_QUEUE: process.env.AMQP_TWITTER_QUEUE || 'xinfin-twitter-trending-topic-queue',
     AMQP_TWITTER_OPERATION: process.env.AMQP_TWITTER_OPERATION || 'xinfin_extractor_data_ops',
     TWITTER_API_URL: process.env.TWITTER_API_URL || 'https://api.twitter.com/1.1/trends/place.json',
-    TWITTER_TOKEN: process.env.TWITTER_TOKEN || 'AAAAAAAAAAAAAAAAAAAAAJNjOwEAAAAAe89CnnNuKAGW4MMTuTc8uhUr7%2FA%3DoF2rYEEaorBBqfuT4YGkUcEmHncalGYivlkRJHNbjQUpcNtWAA',
+    TWITTER_TOKEN: process.env.TWITTER_TOKEN || 'AAAAAAAAAAAAAAAAAAAAAEn5TQEAAAAA9b%2BEaMc8DSH55spAfTUbypyyuNI%3DfMvcdpBBU0pqBfsLgtvICwUqBuctIAAdMxafokFH1tF0vHjIGz',
     TWITTER_KEYWORDS: process.env.TWITTER_KEYWORDS || "",
     TWEET_COUNT: process.env.TWEET_COUNT || "",
-    CRON_TIME: process.env.CRON_TIME || 1800000
+    CRON_TIME: process.env.CRON_TIME || 60000
 
 };
