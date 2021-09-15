@@ -10,5 +10,5 @@ module.exports = {
     TWITTER_TOKEN: process.env.TWITTER_TOKEN || 'AAAAAAAAAAAAAAAAAAAAAEn5TQEAAAAA9b%2BEaMc8DSH55spAfTUbypyyuNI%3DfMvcdpBBU0pqBfsLgtvICwUqBuctIAAdMxafokFH1tF0vHjIGz',
     TWITTER_KEYWORDS: process.env.TWITTER_KEYWORDS || "",
     TWEET_COUNT: process.env.TWEET_COUNT || "",
-    CRON_TIME: process.env.CRON_TIME || 60000
+    CRON_TIME: process.env.CRON_TIME || 900000
 };
