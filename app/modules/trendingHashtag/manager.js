@@ -15,7 +15,7 @@ class BLManager {
         
         setInterval(async () => {
         let result = await countryDetails.findData({}, {}, 0, 0, {addedOn: -1})
-        let tweetCount = await countryDetails.find().count()
+        // let tweetCount = await countryDetails.find().count()
 
 
         const getData = async () => {
@@ -58,7 +58,6 @@ class BLManager {
         Utils.lhtLog('BLManager:getTrendingHashtags', ' responseData ', tweetArray, 'INFO');
 
         let twitterTrendingModel = new TwitterTrendingModel();
-        twitterTrendingModel.trendingList = tweetArray
         //console.log(requestData,"requestDATA=========")
         twitterTrendingModel.trendingList = tweetArray
         twitterTrendingModel.query = getQueryString(tweetArray)
@@ -110,7 +109,7 @@ class BLManager {
         } catch (error) {
             console.log(error)
         }
-    }, Config.CRON_TIME) 
+    }, Config.CRON_TIME)
 
     };
 

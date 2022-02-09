@@ -6,7 +6,7 @@ export default class DBConnection {
   static connect () {
     console.log('DB trying to connect on ' + new Date() + ' to url' + Config.DB)
     const caContent = [
-      fs.readFileSync(__dirname + "/rds-combined-ca-bundle.pem"),
+      fs.readFileSync(__dirname  +"/"+Config.RDS_FILE),
     ];
     const options = {
       keepAlive: 1,
