@@ -10,6 +10,32 @@ const TwitterTrendingModel = require("../../models/twitterTrendingModel")
 
 
 class BLManager {
+
+    async getTrendingHashtagsFromDB(req) {
+        // Utils.lhtLog('BLManager:getTrendingHashtagsFromDB', ' getting trending hashTags from DB', '', 'INFO');
+
+        let selectionKey={
+            trendingList:1.0 ,
+        }
+        let skip = parseInt(req.skip);
+        let limit = parseInt(req.limit);
+        let response=[];
+        let result= await TwitterTrendingModel.findData({},selectionKey,skip?skip:0,limit?limit:1,{addedOn: -1})
+        for(let index=0; index<result[0].trendingList.length; index++){
+            let newObj={}
+            // newObj._id=result[0][index]._id
+            newObj.name=result[0].trendingList[index].name
+            newObj.countryName=result[0].trendingList[index].countryName
+            newObj.latitude=result[0].trendingList[index].latitude
+            newObj.longitude=result[0].trendingList[index].longitude
+            newObj.tweet_volume=result[0].trendingList[index].tweet_volume
+
+            response.push(newObj)
+
+        }
+        return response
+    }
+
     async getTrendingHashtags() {
         Utils.lhtLog('BLManager:getTrendingHashtags', ' Started Trending hashTags ', '', 'INFO');
         

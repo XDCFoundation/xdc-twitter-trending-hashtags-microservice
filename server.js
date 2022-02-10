@@ -6,7 +6,7 @@ import routes from './routes'
 import {httpConstants} from './app/common/constants'
 
 import AMQP from "./library";
-import GetTrendingHashtagController from "./app/modules/trendingHashtag";
+import TrendingController from "./app/modules/trendingHashtag";
 
 const app = new APP();
 require('./config/express')(app);
@@ -27,7 +27,7 @@ class Server {
             routes(app);
             require('./config/jobInitializer')
            
-            new GetTrendingHashtagController().getTrendingHashtags({});
+            new TrendingController().getTrendingHashtags({});
         }).catch(error => Utils.lhtLog('listen', 'failed to connect', {err: error}, 'AyushK', httpConstants.LOG_LEVEL_TYPE.ERROR))
     }
 }
